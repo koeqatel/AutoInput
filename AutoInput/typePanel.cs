@@ -99,8 +99,11 @@ namespace AutoInput
                 watch.Start();
 
                 //TODO: Add end with and start with functionality.
+                SendKeys.Send(startWithTextbox.Text);
+                System.Threading.Thread.Sleep(int.Parse(startDelayNum.Value.ToString()));
                 SendKeys.Send(textBoxTexts[i]);
-                SendKeys.Send("{enter}");
+                System.Threading.Thread.Sleep(int.Parse(endDelayNum.Value.ToString()));
+                SendKeys.Send(endWithTextbox.Text);
 
                 watch.Stop();
                 ms.Add(watch.ElapsedMilliseconds);
@@ -147,6 +150,7 @@ namespace AutoInput
         private void specialCharsButton_MouseEnter(object sender, EventArgs e)
         {
             helpText.Visible = true;
+            helpTipText.Visible = true;
             help2Text.Visible = true;
             helpTextBackground.Visible = true;
         }
@@ -154,6 +158,7 @@ namespace AutoInput
         private void specialCharsButton_MouseLeave(object sender, EventArgs e)
         {
             helpText.Visible = false;
+            helpTipText.Visible = false;
             help2Text.Visible = false;
             helpTextBackground.Visible = false;
         }

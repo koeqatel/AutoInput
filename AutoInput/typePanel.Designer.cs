@@ -60,14 +60,15 @@
             this.helpFader = new System.Windows.Forms.Timer(this.components);
             this.helpTextBackground = new System.Windows.Forms.PictureBox();
             this.help2Text = new System.Windows.Forms.Label();
-            this.endWithTextbox = new System.Windows.Forms.RichTextBox();
+            this.startWithTextbox = new System.Windows.Forms.RichTextBox();
             this.startWithText = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.richTextBox11 = new System.Windows.Forms.RichTextBox();
+            this.endWithTextbox = new System.Windows.Forms.RichTextBox();
             this.startDelayText = new System.Windows.Forms.Label();
             this.endDelayText = new System.Windows.Forms.Label();
             this.startDelayNum = new System.Windows.Forms.NumericUpDown();
             this.endDelayNum = new System.Windows.Forms.NumericUpDown();
+            this.helpTipText = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.delayNum)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.helpTextBackground)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.startDelayNum)).BeginInit();
@@ -218,9 +219,9 @@
             this.secondsText.AutoSize = true;
             this.secondsText.Location = new System.Drawing.Point(156, 9);
             this.secondsText.Name = "secondsText";
-            this.secondsText.Size = new System.Drawing.Size(49, 13);
+            this.secondsText.Size = new System.Drawing.Size(21, 13);
             this.secondsText.TabIndex = 80;
-            this.secondsText.Text = "Seconds";
+            this.secondsText.Text = "Ms";
             // 
             // intervalText
             // 
@@ -236,7 +237,7 @@
             this.richTextBox10.Location = new System.Drawing.Point(31, 318);
             this.richTextBox10.Multiline = false;
             this.richTextBox10.Name = "richTextBox10";
-            this.richTextBox10.Size = new System.Drawing.Size(296, 20);
+            this.richTextBox10.Size = new System.Drawing.Size(320, 20);
             this.richTextBox10.TabIndex = 78;
             this.richTextBox10.Text = "";
             this.richTextBox10.TextChanged += new System.EventHandler(this.All_TextChanged);
@@ -247,7 +248,7 @@
             this.richTextBox9.Location = new System.Drawing.Point(31, 292);
             this.richTextBox9.Multiline = false;
             this.richTextBox9.Name = "richTextBox9";
-            this.richTextBox9.Size = new System.Drawing.Size(296, 20);
+            this.richTextBox9.Size = new System.Drawing.Size(320, 20);
             this.richTextBox9.TabIndex = 77;
             this.richTextBox9.Text = "";
             this.richTextBox9.TextChanged += new System.EventHandler(this.All_TextChanged);
@@ -258,7 +259,7 @@
             this.richTextBox8.Location = new System.Drawing.Point(31, 266);
             this.richTextBox8.Multiline = false;
             this.richTextBox8.Name = "richTextBox8";
-            this.richTextBox8.Size = new System.Drawing.Size(296, 20);
+            this.richTextBox8.Size = new System.Drawing.Size(320, 20);
             this.richTextBox8.TabIndex = 76;
             this.richTextBox8.Text = "";
             this.richTextBox8.TextChanged += new System.EventHandler(this.All_TextChanged);
@@ -269,7 +270,7 @@
             this.richTextBox7.Location = new System.Drawing.Point(31, 240);
             this.richTextBox7.Multiline = false;
             this.richTextBox7.Name = "richTextBox7";
-            this.richTextBox7.Size = new System.Drawing.Size(296, 20);
+            this.richTextBox7.Size = new System.Drawing.Size(320, 20);
             this.richTextBox7.TabIndex = 75;
             this.richTextBox7.Text = "";
             this.richTextBox7.TextChanged += new System.EventHandler(this.All_TextChanged);
@@ -280,7 +281,7 @@
             this.richTextBox6.Location = new System.Drawing.Point(31, 214);
             this.richTextBox6.Multiline = false;
             this.richTextBox6.Name = "richTextBox6";
-            this.richTextBox6.Size = new System.Drawing.Size(296, 20);
+            this.richTextBox6.Size = new System.Drawing.Size(320, 20);
             this.richTextBox6.TabIndex = 74;
             this.richTextBox6.Text = "";
             this.richTextBox6.TextChanged += new System.EventHandler(this.All_TextChanged);
@@ -291,7 +292,7 @@
             this.richTextBox5.Location = new System.Drawing.Point(31, 188);
             this.richTextBox5.Multiline = false;
             this.richTextBox5.Name = "richTextBox5";
-            this.richTextBox5.Size = new System.Drawing.Size(296, 20);
+            this.richTextBox5.Size = new System.Drawing.Size(320, 20);
             this.richTextBox5.TabIndex = 73;
             this.richTextBox5.Text = "";
             this.richTextBox5.TextChanged += new System.EventHandler(this.All_TextChanged);
@@ -302,7 +303,7 @@
             this.richTextBox4.Location = new System.Drawing.Point(31, 162);
             this.richTextBox4.Multiline = false;
             this.richTextBox4.Name = "richTextBox4";
-            this.richTextBox4.Size = new System.Drawing.Size(296, 20);
+            this.richTextBox4.Size = new System.Drawing.Size(320, 20);
             this.richTextBox4.TabIndex = 72;
             this.richTextBox4.Text = "";
             this.richTextBox4.TextChanged += new System.EventHandler(this.All_TextChanged);
@@ -313,7 +314,7 @@
             this.richTextBox3.Location = new System.Drawing.Point(31, 137);
             this.richTextBox3.Multiline = false;
             this.richTextBox3.Name = "richTextBox3";
-            this.richTextBox3.Size = new System.Drawing.Size(296, 20);
+            this.richTextBox3.Size = new System.Drawing.Size(320, 20);
             this.richTextBox3.TabIndex = 71;
             this.richTextBox3.Text = "";
             this.richTextBox3.TextChanged += new System.EventHandler(this.All_TextChanged);
@@ -324,7 +325,7 @@
             this.richTextBox2.Location = new System.Drawing.Point(31, 111);
             this.richTextBox2.Multiline = false;
             this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(296, 20);
+            this.richTextBox2.Size = new System.Drawing.Size(320, 20);
             this.richTextBox2.TabIndex = 70;
             this.richTextBox2.Text = "";
             this.richTextBox2.TextChanged += new System.EventHandler(this.All_TextChanged);
@@ -335,7 +336,7 @@
             this.richTextBox1.Location = new System.Drawing.Point(31, 85);
             this.richTextBox1.Multiline = false;
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(296, 20);
+            this.richTextBox1.Size = new System.Drawing.Size(320, 20);
             this.richTextBox1.TabIndex = 69;
             this.richTextBox1.Text = "";
             this.richTextBox1.TextChanged += new System.EventHandler(this.All_TextChanged);
@@ -343,7 +344,7 @@
             // 
             // specialCharsButton
             // 
-            this.specialCharsButton.Location = new System.Drawing.Point(306, 4);
+            this.specialCharsButton.Location = new System.Drawing.Point(328, 1);
             this.specialCharsButton.Name = "specialCharsButton";
             this.specialCharsButton.Size = new System.Drawing.Size(23, 23);
             this.specialCharsButton.TabIndex = 94;
@@ -355,7 +356,7 @@
             // helpText
             // 
             this.helpText.AutoSize = true;
-            this.helpText.Location = new System.Drawing.Point(378, 25);
+            this.helpText.Location = new System.Drawing.Point(28, 36);
             this.helpText.Name = "helpText";
             this.helpText.Size = new System.Drawing.Size(90, 234);
             this.helpText.TabIndex = 96;
@@ -372,9 +373,9 @@
             // 
             this.helpTextBackground.BackColor = System.Drawing.SystemColors.Control;
             this.helpTextBackground.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.helpTextBackground.Location = new System.Drawing.Point(357, 20);
+            this.helpTextBackground.Location = new System.Drawing.Point(12, 30);
             this.helpTextBackground.Name = "helpTextBackground";
-            this.helpTextBackground.Size = new System.Drawing.Size(317, 275);
+            this.helpTextBackground.Size = new System.Drawing.Size(339, 339);
             this.helpTextBackground.TabIndex = 95;
             this.helpTextBackground.TabStop = false;
             this.helpTextBackground.Visible = false;
@@ -382,7 +383,7 @@
             // help2Text
             // 
             this.help2Text.AutoSize = true;
-            this.help2Text.Location = new System.Drawing.Point(487, 25);
+            this.help2Text.Location = new System.Drawing.Point(137, 35);
             this.help2Text.Name = "help2Text";
             this.help2Text.Size = new System.Drawing.Size(160, 234);
             this.help2Text.TabIndex = 97;
@@ -391,14 +392,14 @@
     "PLY}\r\n{DIVIDE}";
             this.help2Text.Visible = false;
             // 
-            // endWithTextbox
+            // startWithTextbox
             // 
-            this.endWithTextbox.Location = new System.Drawing.Point(70, 33);
-            this.endWithTextbox.Multiline = false;
-            this.endWithTextbox.Name = "endWithTextbox";
-            this.endWithTextbox.Size = new System.Drawing.Size(181, 20);
-            this.endWithTextbox.TabIndex = 98;
-            this.endWithTextbox.Text = "";
+            this.startWithTextbox.Location = new System.Drawing.Point(70, 33);
+            this.startWithTextbox.Multiline = false;
+            this.startWithTextbox.Name = "startWithTextbox";
+            this.startWithTextbox.Size = new System.Drawing.Size(181, 20);
+            this.startWithTextbox.TabIndex = 98;
+            this.startWithTextbox.Text = "";
             // 
             // startWithText
             // 
@@ -418,14 +419,14 @@
             this.label11.TabIndex = 101;
             this.label11.Text = "End with: ";
             // 
-            // richTextBox11
+            // endWithTextbox
             // 
-            this.richTextBox11.Location = new System.Drawing.Point(70, 59);
-            this.richTextBox11.Multiline = false;
-            this.richTextBox11.Name = "richTextBox11";
-            this.richTextBox11.Size = new System.Drawing.Size(181, 20);
-            this.richTextBox11.TabIndex = 100;
-            this.richTextBox11.Text = "";
+            this.endWithTextbox.Location = new System.Drawing.Point(70, 59);
+            this.endWithTextbox.Multiline = false;
+            this.endWithTextbox.Name = "endWithTextbox";
+            this.endWithTextbox.Size = new System.Drawing.Size(181, 20);
+            this.endWithTextbox.TabIndex = 100;
+            this.endWithTextbox.Text = "{ENTER}";
             // 
             // startDelayText
             // 
@@ -469,22 +470,33 @@
             this.endDelayNum.Size = new System.Drawing.Size(48, 20);
             this.endDelayNum.TabIndex = 105;
             // 
+            // helpTipText
+            // 
+            this.helpTipText.AutoSize = true;
+            this.helpTipText.Location = new System.Drawing.Point(28, 277);
+            this.helpTipText.Name = "helpTipText";
+            this.helpTipText.Size = new System.Drawing.Size(234, 26);
+            this.helpTipText.TabIndex = 106;
+            this.helpTipText.Text = "If it starts sending messages next to each other, \r\ntry changing the delay.";
+            this.helpTipText.Visible = false;
+            // 
             // typePanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(685, 381);
+            this.ClientSize = new System.Drawing.Size(363, 381);
+            this.Controls.Add(this.helpTipText);
+            this.Controls.Add(this.help2Text);
+            this.Controls.Add(this.helpText);
+            this.Controls.Add(this.helpTextBackground);
             this.Controls.Add(this.endDelayNum);
             this.Controls.Add(this.startDelayNum);
             this.Controls.Add(this.endDelayText);
             this.Controls.Add(this.startDelayText);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.richTextBox11);
-            this.Controls.Add(this.startWithText);
             this.Controls.Add(this.endWithTextbox);
-            this.Controls.Add(this.help2Text);
-            this.Controls.Add(this.helpText);
-            this.Controls.Add(this.helpTextBackground);
+            this.Controls.Add(this.startWithText);
+            this.Controls.Add(this.startWithTextbox);
             this.Controls.Add(this.specialCharsButton);
             this.Controls.Add(this.Delaybel);
             this.Controls.Add(this.label10);
@@ -556,13 +568,14 @@
         private System.Windows.Forms.Timer helpFader;
         private System.Windows.Forms.PictureBox helpTextBackground;
         private System.Windows.Forms.Label help2Text;
-        private System.Windows.Forms.RichTextBox endWithTextbox;
+        private System.Windows.Forms.RichTextBox startWithTextbox;
         private System.Windows.Forms.Label startWithText;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.RichTextBox richTextBox11;
+        private System.Windows.Forms.RichTextBox endWithTextbox;
         private System.Windows.Forms.Label startDelayText;
         private System.Windows.Forms.Label endDelayText;
         private System.Windows.Forms.NumericUpDown startDelayNum;
         private System.Windows.Forms.NumericUpDown endDelayNum;
+        private System.Windows.Forms.Label helpTipText;
     }
 }
