@@ -12,13 +12,15 @@ using System.Windows.Forms;
 namespace AutoInput
 {
     public partial class typePanel : Form
-    {        
+    {
         List<string> textBoxTexts = new List<string>();
         List<long> ms = new List<long>();
 
+        Random rnd = new Random();
+        int toSpamNum;
         int Boxes = 10;
 
-        #region Hotkey stuff
+        #region Hotkey stuff       
         [System.Runtime.InteropServices.DllImport("user32.dll")]
         private static extern bool RegisterHotKey(IntPtr hWnd, int id, int fsModifiers, int vk);
         [System.Runtime.InteropServices.DllImport("user32.dll")]
@@ -58,13 +60,7 @@ namespace AutoInput
 
             if (m.Msg == 0x0312)
             {
-                /* Note that the three lines below are not needed if you only want to register one hotkey.
-                 * The below lines are useful in case you want to register multiple keys, which you can use a switch with the id as argument, or if you want to know which key/modifier was pressed for some particular reason. */
-
-                //Keys key = (Keys)(((int)m.LParam >> 16) & 0xFFFF);                  // Returns the key of the hotkey that was pressed.
-                //KeyModifier modifier = (KeyModifier)((int)m.LParam & 0xFFFF);       // Returns the modifier of the hotkey that was pressed.
-                //int id = m.WParam.ToInt32();                                        // Returns the id of the hotkey that was pressed.
-
+                //Add texts of every textboxed to a clean list.
                 textBoxTexts.Clear();
                 textBoxTexts.Add(richTextBox1.Text);
                 textBoxTexts.Add(richTextBox2.Text);
@@ -77,6 +73,7 @@ namespace AutoInput
                 textBoxTexts.Add(richTextBox9.Text);
                 textBoxTexts.Add(richTextBox10.Text);
 
+                //Toggle timer.
                 if (TypeTimer.Enabled)
                 {
                     TypeTimer.Stop();
@@ -90,24 +87,36 @@ namespace AutoInput
 
         private void TypeTimer_Tick(object sender, EventArgs e)
         {
-            Random rnd = new Random();
-            int i = rnd.Next(0, Boxes);
-
-            if (textBoxTexts[i] != "")
+            if (menu.spamRandom)
             {
+                toSpamNum = rnd.Next(0, Boxes);
+            }
+            else
+            {
+                if (toSpamNum < 10)
+                    toSpamNum++;
+
+                if (toSpamNum == 10)
+                    toSpamNum = 0;
+            }
+
+            if (textBoxTexts[toSpamNum] != "")
+            {
+                //To see how long this function takes.
                 Stopwatch watch = new Stopwatch();
                 watch.Start();
 
-                //TODO: Add end with and start with functionality.
+                //Send text.
                 SendKeys.Send(startWithTextbox.Text);
                 System.Threading.Thread.Sleep(int.Parse(startDelayNum.Value.ToString()));
-                SendKeys.Send(textBoxTexts[i]);
+                SendKeys.Send(textBoxTexts[toSpamNum]);
                 System.Threading.Thread.Sleep(int.Parse(endDelayNum.Value.ToString()));
                 SendKeys.Send(endWithTextbox.Text);
 
                 watch.Stop();
                 ms.Add(watch.ElapsedMilliseconds);
 
+                //To calculate avarage time of this function
                 int ii = 0;
                 int tot = 0;
                 foreach (int num in ms)

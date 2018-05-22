@@ -348,7 +348,7 @@
             this.specialCharsButton.Name = "specialCharsButton";
             this.specialCharsButton.Size = new System.Drawing.Size(23, 23);
             this.specialCharsButton.TabIndex = 94;
-            this.specialCharsButton.Text = "?";
+            this.specialCharsButton.Text = "~";
             this.specialCharsButton.UseVisualStyleBackColor = true;
             this.specialCharsButton.MouseEnter += new System.EventHandler(this.specialCharsButton_MouseEnter);
             this.specialCharsButton.MouseLeave += new System.EventHandler(this.specialCharsButton_MouseLeave);
@@ -473,7 +473,7 @@
             // helpTipText
             // 
             this.helpTipText.AutoSize = true;
-            this.helpTipText.Location = new System.Drawing.Point(28, 277);
+            this.helpTipText.Location = new System.Drawing.Point(28, 292);
             this.helpTipText.Name = "helpTipText";
             this.helpTipText.Size = new System.Drawing.Size(234, 26);
             this.helpTipText.TabIndex = 106;

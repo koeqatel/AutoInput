@@ -3,28 +3,35 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SnSConfig;
 
 namespace AutoInput
 {
     public partial class menu : Form
     {
         public static bool stayInFront;
+        public static bool spamRandom;
         public static string hotkeyModifier;
         public static string hotkeyKey;
 
 
         public menu()
         {
+            if (!File.Exists("SnSConfig.dll"))
+                MessageBox.Show("Error: Missing SnSConfig.dll");
+
             InitializeComponent();
 
-            readConfig();
+            readConfig();        
 
             if (stayInFront)
                 TopMost = true;
+
         }
 
         private void typeButton_Click(object sender, EventArgs e)
@@ -57,28 +64,29 @@ namespace AutoInput
 
         public void readConfig()
         {
-            SnSConfig sConfig = new SnSConfig();
-
-            if (sConfig.fileEmpty())
+            if (config.fileEmpty())
             {
                 Dictionary<string, string> configLine = new Dictionary<string, string>();
 
                 configLine.Add("stayInFront", "False");
+                configLine.Add("spamRandom", "True");
                 configLine.Add("hotkeyModifier", "Shift");
                 configLine.Add("hotkeyKey", "Z");
 
-                sConfig.setDefaultConfig(configLine);
+                config.setDefaultConfig(configLine);
             }
 
+            stayInFront = Convert.ToBoolean(config.getConfigItem("stayInFront"));
+            //settingsPanel.stayInFront = stayInFront;
 
-            stayInFront = Convert.ToBoolean(sConfig.getConfigItem("stayInFront"));
-            settingsPanel.stayInFront = stayInFront;
+            spamRandom = Convert.ToBoolean(config.getConfigItem("spamRandom"));
+            //settingsPanel.spamRandom = spamRandom;
 
-            hotkeyModifier = sConfig.getConfigItem("hotkeyModifier").ToString();
-            settingsPanel.hotkeyModifier = hotkeyModifier;
+            hotkeyModifier = config.getConfigItem("hotkeyModifier").ToString();
+            //settingsPanel.hotkeyModifier = hotkeyModifier;
 
-            hotkeyKey = sConfig.getConfigItem("hotkeyKey").ToString();
-            settingsPanel.hotkeyKey = hotkeyKey;
+            hotkeyKey = config.getConfigItem("hotkeyKey").ToString();
+            //settingsPanel.hotkeyKey = hotkeyKey;
         }
     }
 }

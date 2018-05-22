@@ -7,28 +7,30 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SnSConfig;
 
 namespace AutoInput
 {
     public partial class settingsPanel : Form
     {
-        public static bool stayInFront;
-        public static string hotkeyModifier;
-        public static string hotkeyKey;
-
         public settingsPanel()
         {
             InitializeComponent();
 
-            if (stayInFront)
+            if (menu.stayInFront)
                 TopMost = true;
 
-            if (stayInFront)
+            if (menu.stayInFront)
                 stayInFrontCheck.Checked = true;
             else
                 stayInFrontCheck.Checked = false;
 
-            hotkeyTextBox.Text = hotkeyModifier + " + " + hotkeyKey;
+            if (menu.spamRandom)
+                spamRandomCheck.Checked = true;
+            else
+                spamRandomCheck.Checked = false;
+
+            hotkeyTextBox.Text = menu.hotkeyModifier + " + " + menu.hotkeyKey;
 
         }
 
@@ -44,11 +46,12 @@ namespace AutoInput
             string hotkeyMod = parts[0];
             string hotkeyKey = parts[1];
             menu.stayInFront = stayInFrontCheck.Checked;
-
-            SnSConfig sConfig = new SnSConfig();
-            sConfig.updateConfig("stayInFront", stayInFrontCheck.Checked.ToString());
-            sConfig.updateConfig("hotkeyModifier", hotkeyMod);
-            sConfig.updateConfig("hotkeyKey", hotkeyKey);
+            menu.spamRandom = spamRandomCheck.Checked;
+            
+            config.updateConfig("stayInFront", stayInFrontCheck.Checked.ToString());
+            config.updateConfig("hotkeyModifier", hotkeyMod);
+            config.updateConfig("hotkeyKey", hotkeyKey);
+            config.updateConfig("spamRandom", spamRandomCheck.Checked.ToString());
 
             menu mnu = new menu();
             mnu.readConfig();
@@ -65,11 +68,6 @@ namespace AutoInput
                 hotkeyTextBox.Text = modifier;
             else
                 hotkeyTextBox.Text = modifier + " + " + key;
-        }
-
-        private void settingsPanel_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

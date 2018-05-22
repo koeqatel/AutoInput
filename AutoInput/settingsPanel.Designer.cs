@@ -33,6 +33,7 @@
             this.stayInFrontCheck = new System.Windows.Forms.CheckBox();
             this.hotkeyText = new System.Windows.Forms.Label();
             this.hotkeyTextBox = new System.Windows.Forms.TextBox();
+            this.spamRandomCheck = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // saveButton
@@ -85,11 +86,22 @@
             this.hotkeyTextBox.TabIndex = 11;
             this.hotkeyTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.hotkeyTextBox_KeyDown);
             // 
+            // spamRandomCheck
+            // 
+            this.spamRandomCheck.AutoSize = true;
+            this.spamRandomCheck.Location = new System.Drawing.Point(100, 32);
+            this.spamRandomCheck.Name = "spamRandomCheck";
+            this.spamRandomCheck.Size = new System.Drawing.Size(91, 17);
+            this.spamRandomCheck.TabIndex = 12;
+            this.spamRandomCheck.Text = "Spam random";
+            this.spamRandomCheck.UseVisualStyleBackColor = true;
+            // 
             // settingsPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(259, 90);
+            this.Controls.Add(this.spamRandomCheck);
             this.Controls.Add(this.hotkeyTextBox);
             this.Controls.Add(this.saveButton);
             this.Controls.Add(this.cancelButton);
@@ -97,7 +109,6 @@
             this.Controls.Add(this.hotkeyText);
             this.Name = "settingsPanel";
             this.Text = "settingsPanel";
-            this.Load += new System.EventHandler(this.settingsPanel_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -109,5 +120,6 @@
         private System.Windows.Forms.CheckBox stayInFrontCheck;
         private System.Windows.Forms.Label hotkeyText;
         private System.Windows.Forms.TextBox hotkeyTextBox;
+        private System.Windows.Forms.CheckBox spamRandomCheck;
     }
 }

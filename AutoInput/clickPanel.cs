@@ -82,6 +82,7 @@ namespace AutoInput
         private void delayNum_ValueChanged(object sender, EventArgs e)
         {
             ClickTimer.Interval = int.Parse(delayNum.Value.ToString());
+            ClickTimer.Stop();
         }
 
         private void ClickTimer_Tick(object sender, EventArgs e)
@@ -111,6 +112,8 @@ namespace AutoInput
                 RightClick.Checked = false;
             else
                 RightClick.Checked = true;
+
+            ClickTimer.Stop();
         }
 
         private void RightClick_Click(object sender, EventArgs e)
@@ -119,6 +122,8 @@ namespace AutoInput
                 LeftClick.Checked = false;
             else
                 LeftClick.Checked = true;
+
+            ClickTimer.Stop();
         }
 
         private void ClickMenu_Load(object sender, EventArgs e)
