@@ -23,7 +23,7 @@ namespace AutoInput
         public menu()
         {
             if (!File.Exists("SnSConfig.dll"))
-                MessageBox.Show("Error: Missing SnSConfig.dll");
+                MessageBox.Show("Error: Missing SnSConfig.dll\n\nTo get this, you have to draw a pentagram, on the night of a full moon...\nSlaughter a red catterpillar in the middle...\nThen a demon will come out and give you the file.\nOn a usb...\nThey're demons, not savages...\n\nYet never forget...\nMagic always comes with a price.\n\nOr you could contact the person that gave you the program...\n\nSpeak to you soon, Sander.\n\nBtw, I'm not responsible for any dead catterpillars or if it didn't work out.");
 
             InitializeComponent();
 
